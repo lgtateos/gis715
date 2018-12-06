@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">.gm-style .gm-style-mtc label,.gm-style .gm-style-mtc div{font-weight:400}</style>
+<link type="text/css" rel="stylesheet" href="css/css_004.css">
+<style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}</style>
+<style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<meta charset="UTF-8">
+
+<!-- JQuery package -->
+
+<link type="text/css" href="../../css/redmond/jquery-ui-1.10.2.css" rel="stylesheet" />
+<script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.2.min.js"></script>
+
+
+<!-- Style header for jQuery accordions -->
+
+<style>
+.ui-accordion-header {
+  font-family: 'Droid Sans', sans-serif;
+  font-style: normal;
+}
+</style>
+
+<!-- Google Maps -->
+<!-- Note: Using healey@ncsu.edu API key here -->
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYSwi_GRjEMy-b_ifObN9zowAtLL0X97w"></script>
+
+
+
+<!-- Google Code hyphenator -->
+
+<script type="text/javascript" src="js/hyphenate.js"></script>
+
+<!-- Google fonts stuff -->
+
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<link rel="stylesheet" type="text/css" href="css/css_002.css">
+<link rel="stylesheet" type="text/css" href="css/css_005.css">
+<link rel="stylesheet" type="text/css" href="css/css_003.css">
+
+<!-- Course page CSS and JS -->
+
+<link type="text/css" href="css/course.css" rel="stylesheet">
+<script type="text/javascript" src="js/mod-date.js"></script>
+<script type="text/javascript" src="js/maa-maps.js"></script>
+
+<!-- Overrides for standard course CSS -->
+
+<link type="text/css" href="css/maa-maps.css" rel="stylesheet">
+
+
+<title>Google Maps: Institute for Advanced Analytics</title>
+<script type="text/javascript" src="other/a"></script><script type="text/javascript" src="js/formatendefaulten.js"></script><script type="text/javascript" charset="UTF-8" src="js/common.js"></script><script type="text/javascript" charset="UTF-8" src="js/map.js"></script><script type="text/javascript" charset="UTF-8" src="js/util.js"></script><script type="text/javascript" charset="UTF-8" src="js/marker.js"></script><style type="text/css">.gm-style {
+        font: 400 11px Roboto, Arial, sans-serif;
+        text-decoration: none;
+      }
+      .gm-style img { max-width: none; }</style><script type="text/javascript" charset="UTF-8" src="js/onion.js"></script><script type="text/javascript" charset="UTF-8" src="js/stats.js"></script><script type="text/javascript" charset="UTF-8" src="js/controls.js"></script><script type="text/javascript" src="js/tq"></script></head>
+
+<body class="hyphenate Hyphenator166css3hyphenate" bgcolor="white">
+
+<div style="
+  position: relative;
+  height: 500px;
+  background-image: url( 'figs/map.png' );
+  background-repeat: no-repeat;
+  background-position: center top;
+">
+
+<!-- NC State logo, upper-left corner -->
+
+  <div style="
+    position: absolute;
+    align: right;
+    top: 10px;
+    left: 10px;
+  ">
+    <a target="_blank" href="http://www.ncsu.edu/">
+      <img src="figs/nc-state-logo-blue.png" style="
+         border-style: none;
+         -moz-box-shadow: 1px 1px 8px #646464;
+         -webkit-box-shadow: 1px 1px 8px #646464;
+         box-shadow: 1px 1px 8px #646464;
+       ">
+    </a>
+  </div>
+
+<!-- Google Maps text, lower-left corner -->
+
+  <div style="
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-size: 16pt;
+    font-weight: normal;
+    color: #646464;
+  ">
+    <div style="line-height: 90%;">Google Maps</div>
+    <div style="font-size: 10pt;">
+      <a target="_blank" href="http://www.csc.ncsu.edu/faculty/healey">
+      <i>Christopher G. Healey</i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Spacer after image of one "line" -->
+
+<div style="height: 1em;"></div>
+
+<!-- Navigation toolbar -->
+
+<div id="navWrap">
+  <div id="nav">
+    <ul id="nav-list">
+      <li id="map-intro">Introduction
+      </li><li id="map-setup">Setup
+      </li><li id="map-basic">Basic Maps
+      </li><li id="map-annotate">Annotations
+      </li><li id="map-data">Loading Data
+    </li></ul>
+  </div>
+
+  <div id="nav-footer">
+  </div>
+</div>
+
+
+<h2 id="intro">Introduction</h2>
+
+<p>
+This module will introduce you to web programming with Google Maps.
+We will discuss the HTML5, CSS, and JavaScript needed to generate a
+basic Google Map inside a web page you publish. We will demonstrate
+how to customize your map, and how to annotate it with SVG (scalable
+vector graphics) glyphs to visualize geographic or geolocated data.
+</p>
+
+<p>
+This tutorial assumes a working knowledge of HTML5, CSS, and
+JavaScript, as well as the ability to edit code on your laptop.
+</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>
+In order to use the Google Maps API, you need to <a target="_blank" href="https://developers.google.com/maps/documentation/javascript/tutorial#api_key">request
+an API key from Google</a>. Google's Maps API v3 web page has detailed
+instructions on how to to this.
+</p>
+
+<p>
+Normally we would create, edit, and store files on a web server.  This
+allows anyone using a web browser to load and display our HTML
+files. For this tutorial, however, you will create, edit, and store
+HTML files on your local hard disk. You will then use your web browser
+to open the files, which loads and displays them.
+</p>
+
+
+<h2 id="basic">Basic Maps</h2>
+
+<p>
+A basic Google Map is programmed in a file in two parts: an HTML part
+to describe the layout of the web page and its contents, and a
+JavaScript part that creates the Google Map <i>within</i> the web
+page.
+</p>
+
+<p>
+Here is the basic HTML that's needed to build a web page with space to
+hold a Google Map.
+</p>
+
+
+<div class="code-div">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;p&gt;&lt;b&gt;Google Map Example (Empty Box)&lt;/p&gt;
+
+  &lt;div id="map-canvas" style="border: 1px solid black; height: 600px;"&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</div>
+
+
+<p>
+If you load this web page into a web browser, you'll see a title and a
+blank rectangular region. This is where we'll insert our Google map.
+</p>
+
+
+<div style="margin: 20px auto 30px auto; width: 600px;">
+  <p style="margin-left: 0;"><b>Google Map Example (Empty Box)</b></p>
+
+  <div style="border: 1px solid black; width: 100%; height: 400px;">
+  </div>
+</div>
+
+
+<p>
+Next, we'll add some JavaScript to our HTML code, to populate the
+rectangular region with a map.
+</p>
+
+
+<div class="code-div">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+<span style="font-style: italic;">&lt;head&gt;
+  &lt;script type="text/javascript" src="https://www.google.com/jsapi"&gt;
+  &lt;/script&gt;
+  &lt;script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=API-KEY"&gt;
+  &lt;/script&gt;
+
+  &lt;script type="text/javascript"&gt;
+    function init()
+    {
+      var  map;
+      var  mapOptions = {
+             center: new google.maps.LatLng( 35.82, -78.64 ),
+             zoom: 8
+           };
+
+      map = new google.maps.Map( document.getElementById( "map-canvas" ), mapOptions );
+    }
+
+    google.maps.event.addDomListener( window, "load", init );
+  &lt;/script&gt;
+&lt;/head&gt;</span>
+
+&lt;body&gt;
+  &lt;p&gt;&lt;b&gt;Google Map Example&lt;/p&gt;
+
+  &lt;div id="map-canvas" style="border: 1px solid black; height: 600px;"&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</div>
+
+
+<p>
+The JavaScript code highlighted in italics initializes a Google map
+object using Google's Maps API. This code defines the map that lives
+inside the <code>map-canvas div</code> (the rectangular region) in our
+HTML, producing a live map that you can manipulate, just like any
+other Google Map.
+</p>
+
+<!--Begin base map-->
+<div style="margin: 20px auto 30px auto; width: 600px;">
+  <script type="text/javascript">
+    function init()
+    {
+      var  map;
+      var  mapOptions = {
+             center: new google.maps.LatLng( 35.82, -78.64 ),
+             zoom: 8
+           };
+
+      map = new google.maps.Map( document.getElementById( "map1" ), mapOptions );
+    }
+
+    google.maps.event.addDomListener( window, "load", init );
+  </script>
+</head> <body> <p><b>Google Base-map Example </b></p> <div id="map1" style="border: 1px solid black; width: 100%; height: 400px;"> </div></div>
+<!--End base map-->
+
+<h2 id="annotate">Annotations</h2>
+
+<p>
+For analytics, our goal is normally not just to show a map, but to
+annotate it with data. The simplest type of annotation is
+<a href="https://developers.google.com/maps/documentation/javascript/markers">a
+marker</a>: a glyph that binds data to a particular location on the
+map. Google Maps allows us to easily locate markers at any location we
+choose.
+</p>
+
+
+<div class="code-div">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script type="text/javascript" src="https://www.google.com/jsapi"&gt;
+  &lt;/script&gt;
+  &lt;script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=API-KEY&amp;"&gt;
+  &lt;/script&gt;
+
+  &lt;script type="text/javascript"&gt;
+    function init()
+    {
+      var  map;
+      var  mapOptions = {
+             center: new google.maps.LatLng( 35.82, -78.64 ),
+             zoom: 8
+           };
+
+      map = new google.maps.Map( document.getElementById( "map-canvas" ), mapOptions );
+
+<span style="font-style: italic;">      var  marker = [ ];
+
+      marker.push(
+        new google.maps.Marker( {
+          position: new google.maps.LatLng( 35.78, -78.80 ),
+          map: map,
+          draggable: true,
+          title: "Cary, NC"
+        } )
+      );</span>
+    }
+
+    google.maps.event.addDomListener( window, "load", init );
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;p&gt;&lt;b&gt;Google Map Example&lt;/p&gt;
+
+  &lt;div id="map-canvas" style="border: 1px solid black; height: 600px;"&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</div>
+
+
+<p>
+The JavaScript code highlighted in italics creates a marker and places
+it on the map. You can see the options for the new marker include its
+latitude and longitude position, the map its attached to, whether the
+user can drag it to a different position, and a title to display if a
+user hovers their mouse cursor over the marker.
+</p>
+
+
+<!--Begin annotated map-->
+<div style="margin: 20px auto 30px auto; width: 600px;">
+  <script type="text/javascript">
+    function init()
+    {
+      var  map;
+      var  mapOptions = {
+             center: new google.maps.LatLng( 35.82, -78.64 ),
+             zoom: 8
+           };
+
+      map = new google.maps.Map( document.getElementById( "map2" ), mapOptions );
+	  
+	  var marker = [ ];
+	  marker.push(
+		new google.maps.Marker( {
+			position: new google.maps.LatLng( 35.78, -78.80 ),
+			map: map, 
+			draggable: true,
+			title: "Cary, NC"
+		} )
+	  );	
+	  
+    }
+
+    google.maps.event.addDomListener( window, "load", init );
+  </script>
+</head> <body> <p><b>Google Map Marker Example</b></p> <div id="map2" style="border: 1px solid black; width: 100%; height: 400px;"> </div></div>
+<!--End annotated map-->
+
+
+<p>
+It's also possible to display custom-built icons. Google Maps supports
+scalable vector graphics (SVG) objects as markers. SVG objects allow
+more flexibility versus the default Google Maps marker. We can change
+their shape, colour, size, and numerous other properties.
+</p>
+
+
+<div class="code-div">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script type="text/javascript" src="https://www.google.com/jsapi"&gt;
+  &lt;/script&gt;
+  &lt;script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=API-KEY&amp;"&gt;
+  &lt;/script&gt;
+
+  &lt;script type="text/javascript"&gt;
+    function init()
+    {
+      var  map;
+      var  mapOptions = {
+             center: new google.maps.LatLng( 35.82, -78.64 ),
+             zoom: 8
+           };
+
+      map = new google.maps.Map( document.getElementById( "map-canvas" ), mapOptions );
+
+      var  marker = [ ];
+
+      marker.push(
+        new google.maps.Marker( {
+          position: new google.maps.LatLng( 35.78, -78.80 ),
+          map: map,
+          draggable: true,
+          title: "Cary, NC"
+        } )
+      );
+<span style="font-style: italic;">      marker.push(
+        new google.maps.Marker( {
+          position: new google.maps.LatLng( 35.95, -77.81 ),
+          map: map,
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            fillColor: "blue",
+            fillOpacity: 0.7,
+            scale: 10,
+            strokeColor: "grey",
+            strokeWeight: 1
+          },
+          title: "SVG circle",
+        } )
+      );
+      marker.push(
+        new google.maps.Marker( {
+          position: new google.maps.LatLng( 35.38, -77.98 ),
+          map: map,
+          icon: {
+            path: "M 0,-115 30,-30 120,-30 50,25 75,110 0,60 -75,110 -50,25 -120,-30 -30,-30 z",
+            fillColor: "yellow",
+            fillOpacity: 0.7,
+            scale: 0.125,
+            strokeColor: "grey",
+            strokeWeight: 1
+          },
+          title: "SVG star",
+        } )
+      );</span>
+    }
+
+    google.maps.event.addDomListener( window, "load", init );
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;p&gt;&lt;b&gt;Google Map Example&lt;/p&gt;
+
+  &lt;div id="map-canvas" style="border: 1px solid black; height: 600px;"&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</div>
+
+
+<p>
+The JavaScript code highlighted in italics creates two SVG markers: a
+circle, and a star. The <code>icon</code> section defines properties
+of the SVG: its shape (or <code>path</code>), colour, opacity, size
+(or <code>scale</code>), and its outline's colour and thickness (or
+<code>strokeColor</code> and <code>strokeWeight</code>).
+<div style="margin: 20px auto 30px auto; width: 600px;">
+<!--  <p style="margin-left: 0;"><b>Google Map Example</b></p>-->
+
+<!--  <div id="svg-map"
+       style="border: 1px solid black; width: 100%; height: 400px;">
+  </div>-->
+  <script type="text/javascript"> function init() { var map; var mapOptions = { center: new google.maps.LatLng( 35.82, -78.64 ), zoom: 8 }; map = new google.maps.Map( document.getElementById( "map3" ), mapOptions ); var marker = [ ]; marker.push( new google.maps.Marker( { position: new google.maps.LatLng( 35.78, -78.80 ), map: map, draggable: true, title: "Cary, NC" } ) ); marker.push( new google.maps.Marker( { position: new google.maps.LatLng( 35.95, -77.81 ), map: map, icon: { path: google.maps.SymbolPath.CIRCLE, fillColor: "blue", fillOpacity: 0.7, scale: 10, strokeColor: "grey", strokeWeight: 1 }, title: "SVG circle", } ) ); marker.push( new google.maps.Marker( { position: new google.maps.LatLng( 35.38, -77.98 ), map: map, icon: { path: "M 0,-115 30,-30 120,-30 50,25 75,110 0,60 -75,110 -50,25 -120,-30 -30,-30 z", fillColor: "yellow", fillOpacity: 0.7, scale: 0.125, strokeColor: "grey", strokeWeight: 1 }, title: "SVG star", } ) ); } google.maps.event.addDomListener( window, "load", init ); </script> </head> <p><b>Google Map Annotation Example</b></p> <div id="map3" style="border: 1px solid black; height: 600px;"> </div>
+</div> 
+
+<h2 id="data">Loading Data</h2>
+
+<p>
+When we visualize information on a map, we need to provide the raw
+data that underlies the visualization. There are many ways to do
+this. One easy option is to store the data in a Google Drive
+spreadsheet, then load it when we're creating markers to place on the
+map. The spreadsheet's data can control properties of each marker, for
+example, its position, its colour, its size, and so on.
+</p>
+
+<p>
+As an example, here is a <a target="_blank" href="https://docs.google.com/a/ncsu.edu/spreadsheets/d/1W94oDu66sBb96RqsKhd8pHhShW8TFGFiceSCSqtFJTE/edit?usp=sharing">spreadsheet
+of city populations, latitudes, and longitudes</a> for U.S. cities
+with a population of 500,000 or higher. Google provides a separate set
+of Visualization APIs with query functions that allow us to load data
+from a Google spreadsheet in an SQL-like manner.
+</p>
+
+
+<div class="code-div">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script type="text/javascript" src="https://www.google.com/jsapi"&gt;
+  &lt;/script&gt;
+  &lt;script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=API-KEY&amp;"&gt;
+  &lt;/script&gt;
+
+  &lt;script type="text/javascript"&gt;
+    function init()
+    {
+<span style="font-style: italic;">      google.load( "visualization", "1", { "callback": init_map } );
+    }
+
+    function init_map() {
+      var  q;
+
+      q = new google.visualization.Query(
+        "https://docs.google.com/a/ncsu.edu/spreadsheets/d/1W94oDu66sBb96RqsKhd8pHhShW8TFGFiceSCSqtFJTE/edit?usp=sharing" );
+      q.setQuery( "SELECT B,D,H,I where D &gt; 499999 ORDER BY B" );
+      q.send( viz_pop );
+    }
+
+    function viz_pop( data ) {
+      var  city;			// City name
+      var  i;				// Loop counter
+      var  lat;				// Latitude
+      var  lon;				// Longitude
+      var  map;				// Map
+      var  marker = [ ];		// SVG circle markers
+      var  n;				// Number of data rows
+      var  opt = {			// Map options
+             center: new google.maps.LatLng( 38.267, -97.806 ),
+             zoom: 4
+           };
+      var  pop;				// Population
+      var  pop_rng;			// Population range
+      var  siz;				// Marker size
+      var  tbl;				// Data table returned
+
+      map = new google.maps.Map( document.getElementById( "map-canvas" ), opt );
+
+      tbl = data.getDataTable();	// Get data table
+      n = tbl.getNumberOfRows();	// Get rows (cities) in table
+      pop_rng = tbl.getColumnRange( 1 );// Population range
+
+      for( i = 0; i &lt; n; i++ ) {	// For all cities
+        lat = tbl.getValue( i, 2 );	// Get lat, lon, population, city name
+        lon = tbl.getValue( i, 3 );
+        pop = tbl.getValue( i, 1 );
+        city = tbl.getValue( i, 0 );
+
+        siz = 5 + ( ( pop - pop_rng.min ) / ( pop_rng.max - pop_rng.min ) * 10.0 );
+
+        marker.push( new google.maps.Marker( {
+          position:  new google.maps.LatLng( lat, lon ),
+          map: map,
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            fillColor: ( pop &gt;= 1000000 ? "red" : "blue" ),
+            fillOpacity: 0.7,
+            scale: siz,
+            strokeColor: "grey",
+            strokeWeight: 1
+          },
+          title: ( city + ": " + pop.toLocaleString() )
+        } ) );
+      }
+    }</span>
+
+    google.maps.event.addDomListener( window, "load", init );
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;p&gt;&lt;b&gt;Google Map Example&lt;/p&gt;
+
+  &lt;div id="map-canvas" style="border: 1px solid black; height: 600px;"&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</div>
+
+
+<p>
+We draw one circle marker for each city. The city's latitude and
+longitude (columns H and I) are used to position the marker. The
+city's population (column D) is used to size the marker, and to colour
+it: cities with less than one million people are blue, and cities with
+one million people or more are red. Finally, the city's name (column
+A) and population are used as a pop-up title for the marker.
+</p>
+
+<!--<div style="margin: 20px auto 30px auto; width: 600px;">
+  <p style="margin-left: 0;"><b>Google Map Example</b></p>
+
+  
+  </div>
+</div>-->
+
+<!--Begin dot viz-->
+<div style="margin: 20px auto 30px auto; width: 600px;">
+  <script type="text/javascript">
+      	function init() { 
+			google.load( "visualization", "1", { "callback": init_map } );
+		}
+		
+		function init_map() { 
+			var q; 
+			q = new google.visualization.Query( 
+
+"https://docs.google.com/spreadsheets/d/1W94oDu66sBb96RqsKhd8pHhShW8TFGFiceSCSqtFJTE/edit?usp=sharing" ); 
+			q.setQuery( "SELECT B,D,H,I where D > 499999 ORDER BY B" ); 
+			q.send( viz_pop ); 
+		} 
+			function viz_pop( data ) { 
+			var city;	// City name 
+			var i;	// Loop counter 
+			var lat;	// Latitude 
+			var lon;	// Longitude 
+			var map;	// Map 
+			var marker = [ ];	// SVG circle markers 
+			var n;	// Number of data rows 
+			var opt = {	// Map options 
+center: 
+				new google.maps.LatLng( 38.267, -97.806 ), 
+				zoom: 4 }; 
+			var pop;	// Population 
+			var pop_rng;	// Population range 
+			var siz;	// Marker size 
+			var tbl;	// Data table returned 
+
+			map = new google.maps.Map( document.getElementById( "map4" ), opt ); 
+			tbl = data.getDataTable();	// Get data table 
+			n = tbl.getNumberOfRows();	// Get rows (cities) in table 
+			pop_rng = tbl.getColumnRange( 1 );  // Population range 
+			for( i = 0; i < n; i++ ) {	// For all cities 
+					lat = tbl.getValue( i, 2 );	// Get lat, lon, population, city name 
+					lon = tbl.getValue( i, 3 ); 
+					pop = tbl.getValue( i, 1 ); 
+					city = tbl.getValue( i, 0 );
+					siz = 5 + ( ( pop - pop_rng.min ) / ( pop_rng.max - pop_rng.min ) * 10.0 );
+					
+					marker.push( new google.maps.Marker( { 
+						position: new google.maps.LatLng( lat, lon ), 
+						map: map, 
+						icon: { 
+							path: google.maps.SymbolPath.CIRCLE, 
+							fillColor: ( pop >= 1000000 ? "red" : "blue" ), 	
+							fillOpacity: 0.7, 
+							scale: siz, strokeColor: "grey", 
+							strokeWeight: 1 
+							}, 
+							title: ( city + ": " + pop.toLocaleString() ) 
+							} ) );
+						} 
+					}
+					google.maps.event.addDomListener( window, "load", init );
+   </script>
+</head> <body> <p><b>Google Map Population Example</b></p> <div id="map4" style="border: 1px solid black; width: 100%; height: 
+
+400px;"> </div></div>
+<!--end dot viz-->
+<!--
+<div style="margin: 20px auto 30px auto; width: 600px;">
+  <p style="margin-left: 0;"><b>Google Map Route Example</b></p>
+
+  <div id="route-map"
+       style="border: 1px solid black; width: 100%; height: 400px;">
+  </div>
+</div>
+-->
+
+
+<!-- The mod-date span will be updated by code in mod-date.js -->
+
+<hr class="fig_top">
+<div class="footer">
+  Updated <span id="mod-date">7-May-17</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<img style="display: none;" src="other/tq_002"></body></html>
+<!--  LocalWords:  ui Analytics Healey CSS SVG scalable glyphs API px
+ -->
+<!--  LocalWords:  geolocated DOCTYPE html javascript src init colour
+ -->
+<!--  LocalWords:  mapOptions getElementById analytics draggable grey
+ -->
+<!--  LocalWords:  fillColor fillOpacity strokeColor strokeWeight SQL
+ -->
+<!--  LocalWords:  APIs google setQuery lon rng siz tbl getDataTable
+ -->
+<!--  LocalWords:  getNumberOfRows getColumnRange getValue
+ -->
+<!--  LocalWords:  toLocaleString
+ -->

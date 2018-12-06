@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/course.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>GeoVis</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="css/layout.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+
+
+
+
+
+<body>
+
+<div id="outercontainer">
+<div id="container">
+
+<header> 
+<div id="header-image"><p>GeoVis</p></div>
+<nav>
+<ul class="nav">
+<li><a href="index.html">Home</a></li>
+<li><a href="syllabus.html">Syllabus</a></li>
+<li><a href="schedule.html">Schedule</a></li>
+<li><a href="resources.html">Resources</a></li>
+<li><a href="instructors.html">Instructors</a></li>
+</ul>
+</nav>
+
+</header>
+
+<div id="content2">
+<!-- InstanceBeginEditable name="content" -->
+<div>
+  <div><br />
+          <br />
+         <u> Learn basic commands in Windows console</u>:<br />
+   
+    <a href="http://www.google.com/url?q=http%3A%2F%2Fwww.computerhope.com%2Fissues%2Fchusedos.htm&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNH8QuZkd0SvKXBYqdfuPcbD6SOmOg">http://www.computerhope.com/issues/chusedos.htm</a><br />
+   To launch the Windows console, go to the Start button and type cmd<br />
+    Use <strong>dir</strong> to list directory contents.<br />
+    Use <strong>cd</strong> change directories<br />
+    cd C:/temp<br />
+    cd ..  (goes up a level)<br />
+    <br />
+  </div>
+</div>
+<div><u>Install Python software via the command line</u></div>
+<div>Easy Install is a Python module (easy_install) bundled with setuptools that lets you automatically download, build, install, and manage Python packages.</div>
+<div><br />
+</div>
+<div>To get it: </div>
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>1) Go here to download ez_setup.y under Windows (simplified):<br />
+          </div>
+          <br />
+          <a href="https://www.google.com/url?q=https%3A%2F%2Fpypi.python.org%2Fpypi%2Fsetuptools&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFSPYVqkRFKxCS6T556Fr_h9dhUDg" target="_blank">https://pypi.python.org/pypi/setuptools</a><br />
+          <br />
+        </div>
+        2) Run ez_setup.py  (You can do this at the command line or I think you can run it in an ide.)<br />
+        <br />
+      </div>
+      This should enable you to use easy_install.  For me, it installed easy_install.exe under here C:\Python27\ArcGIS10.2\Scripts<br />
+      <br />
+    </div>
+    3) Then you can run something like this (depends on your ArcGIS install version--this laptop is still on Arc 10.2):<br />
+    <br />
+    C:\Python27\ArcGIS10.2\Scripts\easy_install flickrapi<br />
+    <br />
+  </div>
+  4) Test the software in Python IDE:</div>
+<div>import flickrapi<br />
+</div>
+<div><br />
+</div>
+<div><u>Run a database software from the command line</u></div>
+<ul>
+  <li>Download sqlite  <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.sqlite.org%2Fdownload.html&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGgBWPUdt8EIw7V6sZGjggg_C0DNw">https://www.sqlite.org/download.html</a>      Precompiled Binaries for Windows, the command line one.  Unzip it.  Double-click it to install.  Find out where it installed.  </li>
+  <li>Go back to the Windows command line. cd to the directory where it installed. Enter a SQL command at the prompt to create and populate the  new database. At a shell or DOS prompt, enter: <br />
+      <strong>sqlite3 test.db</strong> <br />
+    This creates a new database named &quot;test.db&quot;. <br />
+  </li>
+  <li>Type the name of the sqlite executable in the command window to start sqlite.</li>
+</ul>
+<div><u>Learn a few basic database commands</u><br />
+</div>
+<div>
+  <ul>
+    <li>Create the friends and cars tables by copying the code to CREATE these tables from the SQLite Introduction page</li>
+  </ul>
+</div>
+<div><a href="http://www.google.com/url?q=http%3A%2F%2Fzetcode.com%2Fdb%2Fsqlite%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFKCZjY5mesrJfMwbWE7bifqCTFvg">http://zetcode.com/db/sqlite/</a></div>
+<div>Then try the code on <a href="http://www.google.com/url?q=http%3A%2F%2Fzetcode.com%2Fdb%2Fsqlite%2Ftool%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGF_-uYgEsOFXuqfHNcyw0hNuKK0Q">The sqlite3 command line</a> tool page</div>
+<div>type <strong>.exit </strong>when you want to quit sqlite3 </div>
+<div><br />
+</div>
+<div><u>Install PostGreSQL</u></div>
+<div><strong>PostGreSQL</strong></div>
+<div>http://www.postgresql.org/download/windows/<br />
+    <a href="http://www.google.com/url?q=http%3A%2F%2Fwww.enterprisedb.com%2Fproducts%2Fpgdownload.do%23windows&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNH_VDDazWSrN73oS8ea3lUp5NRxTw">Download</a> the installer from EnterpriseDB for all supported versions.</div>
+<hr />
+<br />
+<h3>Get started with IPython Notebook <a name="IPython" id="IPython"></a><br />
+</h3>
+<div>
+  <ul>
+    <li><em>Install</em> and <em>run</em> ipythonNotebook (you have to install pip first, using the lab 2 instructions before this will work).</li>
+  </ul>
+  <ul>
+    <li> On the command line, install ipython using pip:</li>
+  </ul>
+  <div>pip install ipython[all]<br />
+  </div>
+</div>
+<div>
+  <ul>
+    <li>On the command line, run ipython Notebook:</li>
+  </ul>
+</div>
+<div>ipython notebook<br />
+</div>
+<div>
+  <ul>
+    <li><em>Create a new notebook</em> by selecting <em>Python 2</em> from the 'New' drop-down menu on the right.</li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li>Use some iPython Notebook <em>formatting features</em>:</li>
+  </ul>
+</div>
+<div>
+  <ol>
+    <li>Change the title of the notebook by replacing 'Untitled' with your unity id underscore PlayNotebook (e.g., jkrowli_PlayNotebook)</li>
+    <li>Insert a heading.  Here's how: The notebook is composed of <em>cells</em>. Every cell has a unique purpose depending upon its type. Each cell in the notebook is a Python code-cell by default. To change the type of the cell, use the first dropdown box in the toolbar.  Highlight the first cell by clicking on it. From the dropdown select <em>Heading</em>. This will change the highlighted cell type to a header (e.g., Homework 2). Press <em>Shift+Enter</em> to execute the current cell and move to the next one. If no cell exists below the current one, a new cell will be created. To insert a cell above or below the current cell, use the <em>Insert</em> menu.  Likewise, to delete a cell, select the cell and use the <em>Edit</em> menu.</li>
+    <li> Change the next cell to a “Markdown” cell type. Then type some markdown code.  (e.g., iPython &lt;b&gt;notebook&lt;/b&gt; is &lt;i&gt;cool&lt;/i&gt;! ) Pressing <em>Shift+Enter</em> will render the markdown.  The markdown type is used to create formatted text within the notebook. This example used html, but markdown has it's own set of simpler symbols that convert to html.  For example, change the next cell to a markdown cell and then type the following (and press <em>Shift+Enter</em> ):  iPython **notebook** is *cool*!   <br />
+           
+      Here's a markdown cheat sheet <a href="http://www.google.com/url?q=http%3A%2F%2Fnestacms.com%2Fdocs%2Fcreating-content%2Fmarkdown-cheat-sheet&amp;sa=D&amp;sntz=1&amp;usg=AFrqEzdMGwjCalSA1m3w_hR0HtzJEFAPZA">http://nestacms.com/docs/creating-content/markdown-cheat-sheet</a>.  To learn even more about the Markdown syntax, visit <a href="http://www.google.com/url?q=http%3A%2F%2Fdaringfireball.net%2Fprojects%2Fmarkdown%2F&amp;sa=D&amp;sntz=1&amp;usg=AFrqEzdOVk3-JDTUl5qHNVqubxEYxJ_sCQ">http://daringfireball.net/projects/markdown/</a>. IPython supports a rich variation of Markdown. (This variation allows Latex equations to be entered directly into the markdown. Latex is a document preparation system for high-quality typesetting, often used for creating academic publications.)  <br />
+    </li>
+  </ol>
+</div>
+<div>
+  <ul>
+    <li>Note that each time you want to execute the code in a cell, you  press <em>Shift+Enter.</em>   Use your notebook to execute code as follows:    </li>
+  </ul>
+  <ol>
+    <li>iPython notebook can act as a regular Python Interactive window.  For example, try the following code using 'C:/Temp' or your favorite small directory:<br />
+        <br />
+      <div>import os<br />
+        myDir = 'C:/Temp'<br />
+        for  root, dirs, files in os.walk(myDir):<br />
+            
+        print 'root = {0}'.format(root)<br />
+            
+        print 'dirs = {0}'.format(dirs)<br />
+            
+        print 'files = {0}\n'.format(files)<br />
+      </div>
+      <br />
+    </li>
+    <li>You can also use it to run arcpy commands.  For example, try the following:<br />
+        <br />
+      <div>import arcpy<br />
+        arcpy.ListPrinterNames()<br />
+      </div>
+      <br />
+    </li>
+    <li>iPython also has a set of &quot;<em>magic&quot;</em> commands that help the interactive programming process. Magic commands are prefixed with a single or double percent symbol. The pylab magic command automatically configures Python for plotting. Use the <em>pylab</em> magic command by entering the following into a code cell:<br />
+        <br />
+                
+      %pylab inline<br />
+      <br />
+    </li>
+    <li>pylab is a numeric computation environment with its own set of commands.   For example pylab has a <em>linspace</em> command.  Try the following code in the next cell to see what <em>linspace</em> does.<br />
+        <br />
+      linspace(0,10)<br />
+      <br />
+    </li>
+    <li>Next, in another code cell, add and execute the following Python code to plot a segment of the sine function:<br />
+        <br />
+      <div>x = linspace(0,10)   #Returns evenly spaced numbers over the specified interval.<br />
+        y = sin(x)<br />
+        plot(x,y)<br />
+      </div>
+      <br />
+    </li>
+    <li>In next cell, write and execute code to plot the arctan function with x ranging from 0 to 10.<br />
+        <br />
+    </li>
+    <li>Finally, write some code to calculate the visual angle of a 0.47 inches high object 27 inches away.  According to the lecture, this should be around 1 degree. Notice that arctan returns results in radians.  Convert the return value to degrees (using something like this: theta*180/pi) <br />
+    </li>
+  </ol>
+</div>
+<ul>
+  <li>You can save your notebook in several ways.  For this homework, save it as an html file.   File &gt; Download as &gt; .html and submit this file to show your work.  <br />
+    For other projects, you can share your work on NBviewer.  To store a notebook online, you can use GitHub’s gist service by navigating to <a href="https://www.google.com/url?q=https%3A%2F%2Fgist.github.com&amp;sa=D&amp;sntz=1&amp;usg=AFrqEzcsDpDsJO90r2LTNCWHJ6hztuah3A">https://gist.github.com</a> in Chrome (Firefox doesn't work at this time). Then find your notebook file (the one ending in .ipynb) in the directory where you created it.  Drag and drop the notebook file onto the largest textbox on the gis.github page. Next click on the “Create Public Gist” button (Do not use the Create Private Gist function. This does not work with NBviewer)  The web page address can be rendered using nbviewer. This can be done by copying the address into the textbox on <a href="http://www.google.com/url?q=http%3A%2F%2Fnbviewer.org%2F&amp;sa=D&amp;sntz=1&amp;usg=AFrqEzfbx0jEDpK8F6TRmMeoeC7pI27BwA">http://nbviewer.org/</a> and clicking the “Go!” button. A static rendering of the notebook, as seen below, will be displayed. The address generated by nbviewer can be shared with anyone. People viewing your notebook <strong>do not</strong> need a GitHub account.</li>
+</ul>
+<hr />
+<p><strong>Get the GRASS-GIS workshop materials up and running</strong> <a name="grass" id="IPython2"></a><br />
+    </p>
+<p>Download and install the OSGeoLive Virtual Machine:<br />
+  <br />
+  https://live.osgeo.org/en/index.html (Get the .iso file from here: <a href="https://sourceforge.net/projects/osgeo-live/files/10.0/">https://sourceforge.net/projects/osgeo-live/files/10.0/</a>)<br />
+  <br />
+  Next, inside the Virtual Machine:<br />
+  <br />
+  1) Open Firefox (there's a button along the bottom bar). Browse to  https://github.com/wenzeslaus/python-grass-addon<br />
+  <br />
+  2) Select the "Clone or Download" button.  Then "Download Zip"<br />
+  <br />
+  3) Extract the zipped contents. (Right click on the file.  Name starts with "Python-addons".  Select "Extract Here" to unzip the Downloads) <br />
+  Now you should have a directory with this path: /home/user/Downloads/python-grass-addon-master/   (confirm that there is a ipynb file just inside this directory)<br />
+  <br />
+  4) Launch the command window (inside the vm, click on LXTerminal button along the bottom bar).
+  <br />
+  <br />
+  5) In the command window, change directories to your new folder by entering the following command:
+  cd Downloads/python-grass-addon-master/
+  <br />
+  <br />
+  6) In the command window run GRASS GIS.  To do this, type grass and tab.  It will auto-complete with the full grass version name.  For example, it will say something like: grass70  Press Enter to run grass.  
+  <br />
+  <br />
+  7) In GRASS, select a GRASS Location (e.g. loc_carolina...) and select GRASS Mapset (e.g., User1). Then click 'Start GRASS session'.
+  <br />
+  <br />
+  8) In the command window it should give you a GRASS prompt. Now you're ready to launch ipython notebook inside of GRASS GIS. It will automatically open the notebook that's in the current directory that you have changed to.   At the prompt, type  <br />
+  ipython notebook<br />
+  (you might need to wait a moment before the webpage launches. Don't worry about any errors reported, as long as you see IPython Notebook launched successfully)  </p>
+<p><em>Now you're ready to follow along with the workshop. Enjoy!</em><br />
+  <br />
+  GRASS GIS Manuals are here:  https://grass.osgeo.org/documentation/manuals/</p>
+  <hr />
+  <div>
+    <div>
+      <div>
+        <div>
+          <div><strong>R Lab  (post on Piazza if you have trouble)</strong><a name="TOC-Get-R" id="TOC-Get-R"></a><br />
+          </div>
+          <div>
+            <ul>
+              <li>
+                <h2>Get R</h2>
+                <p>First you need to install R programming language. R 3.0.2 or later installed on   your computer.   Click <a href="http://www.google.com/url?q=http%3A%2F%2Fcran.rstudio.com%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEsU6up_I6jtyZqv5IxYludSd7ySw" target="_blank">here</a> and select the appropriate installer for your operating system. </p>
+                <p>For help installing R, check out one of the following videos (courtesy of Roger Peng at Johns Hopkins Biostatistics):</p>
+              </li>
+              <ul>
+                <li><a href="http://youtu.be/mfGFv-iB724" target="_blank">Installing R on Windows</a></li>
+                <li><a href="http://youtu.be/Icawuhf0Yqo" target="_blank">Installing R on Mac</a></li>
+              </ul>
+            </ul>
+            <ul>
+              <li>
+                <h2><a name="TOC-Get-RStudio" id="TOC-Get-RStudio"></a>Get RStudio</h2>
+              </li>
+            </ul>
+            <div>In   addition to R, you need to install RStudio, which will make your   experience with R much more enjoyable. This is an IDE for R. To install   RStudio, click <a href="http://www.google.com/url?q=http%3A%2F%2Fwww.rstudio.com%2Fproducts%2Frstudio%2Fdownload%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEh3CH2q26cy8ffMYIBbMD2A_hosA" target="_blank">here</a> and select the appropriate installer for your operating system.</div>
+            <br />
+          </div>
+          <ul>
+            <li><strong>Install packages</strong> </li>
+          </ul>
+          <div>To install a package in R, you can type <strong>install.packages(&quot;<em>packageName&quot;</em>)</strong> in the RStudio console window.  Install the following packages (<em>make sure to put quotations around the package name</em>):</div>
+          <div>sp <br />
+            rgdal<br />
+            maptools<br />
+            latticeExtra <br />
+            raster<br />
+            <br />
+          </div>
+          <ul>
+            <li><strong>Test the installation</strong> by downloading the zip file (below), opening the R markdown file (it   has a .Rmd extension). Then knit the HTML.   This should generate a new   HTML page in the same directory as the R markdown file.<br />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div><img src="images/RStudio_001.png" alt="a" border="0" /></div>
+  <p>&nbsp;</p>
+<!-- InstanceEndEditable --></div>
+
+</div></div>
+</body>
+<!-- InstanceEnd --></html>
